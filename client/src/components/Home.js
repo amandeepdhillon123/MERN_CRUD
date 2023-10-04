@@ -5,7 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import { NavLink } from "react-router-dom";
 import { adddata, updatedata, deldata } from "./Context/ContextProvider";
-
+import {BASE_URL} from "../services/helper"
 const Home = () => {
   const [getuserData, setuserData] = useState([]);
 //   console.log(getuserData);
@@ -19,7 +19,7 @@ const Home = () => {
   const getpdata = async (e) => {
     // e.preventDefault();
 
-    const resp = await fetch("/getdata", {
+    const resp = await fetch(`${BASE_URL}/getdata`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const Home = () => {
   //   delete
 
   const deleteuser = async (id) => {
-    const res2 = await fetch(`/deleteuser/${id}`, {
+    const res2 = await fetch(`${BASE_URL}/deleteuser/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

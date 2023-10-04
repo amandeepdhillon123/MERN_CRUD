@@ -10,6 +10,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useParams ,NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import {BASE_URL} from "../services/helper"
 const Details = () => {
    
    const [getuserData,setuserData] =useState([]);
@@ -19,7 +20,7 @@ const Details = () => {
     const navigate =useNavigate();
    //   console.log(id)
    const Getdata =async() =>{
-       const resp = await fetch(`/getuser/${id}`,{
+       const resp = await fetch(`${BASE_URL}/getuser/${id}`,{
          method:"GET",
          headers:{
             "Content-Type":"application/json"
@@ -43,7 +44,7 @@ const Details = () => {
    //   delete 
 
 const deleteuser = async (id) => {
-   const res2 = await fetch(`/deleteuser/${id}`, {
+   const res2 = await fetch(`${BASE_URL}/deleteuser/${id}`, {
      method: "DELETE",
      headers: {
        "Content-Type": "application/json",

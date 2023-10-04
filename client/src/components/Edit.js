@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { updatedata } from './Context/ContextProvider'
+import {BASE_URL} from "../services/helper"
 const Edit = () => {
 
   const {updata, setUPdata} =useContext(updatedata)
@@ -33,7 +34,7 @@ const Edit = () => {
         const {id} = useParams("")
         // console.log(id)
       const Getdata =async() =>{
-        const resp = await fetch(`/getuser/${id}`,{
+        const resp = await fetch(`${BASE_URL}/getuser/${id}`,{
           method:"GET",
           headers:{
              "Content-Type":"application/json"
@@ -64,7 +65,7 @@ const Edit = () => {
       e.preventDefault();
       const {name,email,age,mobile, work, add, desc} = inpval;
 
-      const resp2 =await fetch(`/updateuser/${id}`,{
+      const resp2 =await fetch(`${BASE_URL}/updateuser/${id}`,{
          method:"PUT",
          headers:{
           "Content-Type" :"application/json"

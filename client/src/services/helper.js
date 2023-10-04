@@ -1,0 +1,1 @@
+export const BASE_URL = "https://crudbackend-t499.onrender.com"

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { adddata } from "./Context/ContextProvider";
+import {BASE_URL} from "../services/helper"
 const Register = () => {
 
    const{udata,setUdata} = useContext(adddata)
@@ -64,7 +65,7 @@ const Register = () => {
             }
             else{
               
-              const  fetchData = await fetch("/register",{
+              const  fetchData = await fetch(`${BASE_URL}/register`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
