@@ -5,7 +5,7 @@ require("dotenv").config()
 
 const dbConnect = ()=>{
     mongoose.connect(process.env.MONGODB_URl,{
-        useNewUrlparser:true,
+        useNewUrlParser:true,
         useUnifiedTopology:true
     })
 
