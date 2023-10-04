@@ -17,9 +17,9 @@ app.listen(PORT ,() =>{
     console.log(`server starts at ports ${PORT}`)
 })
 
-app.get("/",(req,resp)=>{
-    resp.send("helo ")
-    resp.send()
-})
+// app.get("/",(req,resp)=>{
+//     resp.send("helo ")
+//     resp.send()
+// })
 
 
