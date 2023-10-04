@@ -3,7 +3,7 @@ const express = require("express");
 const dbConnect= require("./config/db")
 const cors = require("cors")
 const route = require("./routes/todo")
-const PORT = process.env.PORT || 8005
+const PORT = process.env.PORT || 8003
 
 const app =express();
 app.use(express.json())
